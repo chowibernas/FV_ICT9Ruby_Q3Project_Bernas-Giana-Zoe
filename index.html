@@ -155,20 +155,20 @@
   <br>
    <label>From which station?</label> 
 	<select class="form-select" id="fromwhere">
-	<option value="1"> Pick a Station</option>
-	<option value="1" >North Avenue</option>
-	<option value="1">Quezon Avenue</option>
-	<option value="1">GMA Kamuning</option>
-	<option value="1">Araneta - Cubao</option>
-	<option value="1">Santolan - Annapolis</option>
-	<option value="1">Ortigas</option>
-	<option value="1">Shaw Bldv.</option>
-	<option value="1">Boni Avenue</option>
-	<option value="1">Gualupe</option>
-	<option value="1">Buendia</option>
-	<option value="1">Ayala</option>
-	<option value="1">Magallanes</option>
-	<option value="1">Taft Avenue</option>
+	<option value="none"> Pick a Station</option>
+	<option value="0">North Avenue</option>
+	<option value="0">Quezon Avenue</option>
+	<option value="0">GMA Kamuning</option>
+	<option value="3">Araneta - Cubao</option>
+	<option value="3">Santolan - Annapolis</option>
+	<option value="7">Ortigas</option>
+	<option value="7">Shaw Bldv.</option>
+	<option value="7">Boni Avenue</option>
+	<option value="11">Gualupe</option>
+	<option value="11">Buendia</option>
+	<option value="11">Ayala</option>
+	<option value="15">Magallanes</option>
+	<option value="15">Taft Avenue</option>
    </select>
 
    <br>
@@ -176,30 +176,54 @@
    <label>To which station</label> 
 	<select class="form-select" id="towhere">
    <option value="none"> Pick a Station</option>
-	<option value="13">North Avenue</option>
-	<option value="13">Quezon Avenue</option>
-	<option value="13">GMA Kamuning</option>
-	<option value="16">Araneta - Cubao</option>
-	<option value="16">Santolan - Annapolis</option>
-	<option value="20">Ortigas</option>
-	<option value="20">Shaw Bldv.</option>
-	<option value="20">Boni Avenue</option>
-	<option value="24">Gualupe</option>
-	<option value="24">Buendia</option>
-	<option value="24">Ayala</option>
-	<option value="28">Magallanes</option>
-	<option value="28">Taft Avenue</option>
+	<option value="0">North Avenue</option>
+	<option value="0">Quezon Avenue</option>
+	<option value="0">GMA Kamuning</option>
+	<option value="3">Araneta - Cubao</option>
+	<option value="3">Santolan - Annapolis</option>
+	<option value="7">Ortigas</option>
+	<option value="7">Shaw Bldv.</option>
+	<option value="7">Boni Avenue</option>
+	<option value="11">Gualupe</option>
+	<option value="11">Buendia</option>
+	<option value="11">Ayala</option>
+	<option value="15">Magallanes</option>
+	<option value="15">Taft Avenue</option>
 	</select>
 
    <script>
 	function showValue(){
-		var num1 = document.getElementById("fromwhere").value;
+		var fromwhere = document.getElementById("fromwhere").value;
 
-		var num2 = document.getElementById("towhere").value;
+		var towhere = document.getElementById("towhere").value;
 
-			var payment = num1 * num2; 
+	   	var basefare = 13;
+
+         var minus = Math.abs(fromwhere - towhere);
+
+			var payment = basefare + minus; 
+
+			
 		
 		window.alert("Your total will be " + payment + " PHP, please proceed to the next part below!");
+	}
+
+	function discount(){
+		var fromwhere = document.getElementById("fromwhere").value;
+
+		var towhere = document.getElementById("towhere").value;
+
+		var basefare = 13;
+
+      var minus = Math.abs(fromwhere - towhere);
+
+		var payment = basefare + minus;
+
+		var rate = payment * 0.20;
+
+		var discountprice = payment - rate;
+		
+		window.alert("Your total will be " + discountprice + " PHP, please proceed to the next part below!");
 	}
 
     </script>
@@ -207,6 +231,7 @@
     <br><br>
 
     <button type="Submit" class="btn btn-light" onclick="showValue()">Show Price</button>
+    <button type="Submit" class="btn btn-light" onclick="discount()">Discount Price</button>
 
     <br>
 
@@ -232,10 +257,4 @@
 </div>
 </body>
 </html>
-
-
-
-
 </center>
-</body>
-</html>
