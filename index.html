@@ -208,26 +208,27 @@
 
 <br>
 
+
 <div class="fareguide">
    <form>
 
   <br>
    <label>From which station?</label> 
 	<select class="form-select" id="fromwhere">
-	<option value="0"> Pick a Station</option>
-	<option value="0" >North Avenue</option>
+	<option value="none"> Pick a Station</option>
+	<option value="0">North Avenue</option>
 	<option value="0">Quezon Avenue</option>
 	<option value="0">GMA Kamuning</option>
-	<option value="0">Araneta - Cubao</option>
-	<option value="0">Santolan - Annapolis</option>
-	<option value="0">Ortigas</option>
-	<option value="0">Shaw Bldv.</option>
-	<option value="0">Boni Avenue</option>
-	<option value="0">Gualupe</option>
-	<option value="0">Buendia</option>
-	<option value="0">Ayala</option>
-	<option value="0">Magallanes</option>
-	<option value="0">Taft Avenue</option>
+	<option value="3">Araneta - Cubao</option>
+	<option value="3">Santolan - Annapolis</option>
+	<option value="7">Ortigas</option>
+	<option value="7">Shaw Bldv.</option>
+	<option value="7">Boni Avenue</option>
+	<option value="11">Gualupe</option>
+	<option value="11">Buendia</option>
+	<option value="11">Ayala</option>
+	<option value="15">Magallanes</option>
+	<option value="15">Taft Avenue</option>
    </select>
 
    <br>
@@ -238,64 +239,66 @@
 	<option value="0">North Avenue</option>
 	<option value="0">Quezon Avenue</option>
 	<option value="0">GMA Kamuning</option>
-	<option value="0">Araneta - Cubao</option>
-	<option value="0">Santolan - Annapolis</option>
-	<option value="0">Ortigas</option>
-	<option value="0">Shaw Bldv.</option>
-	<option value="0">Boni Avenue</option>
-	<option value="0">Gualupe</option>
-	<option value="0">Buendia</option>
-	<option value="0">Ayala</option>
-	<option value="0">Magallanes</option>
-	<option value="0">Taft Avenue</option>
+	<option value="3">Araneta - Cubao</option>
+	<option value="3">Santolan - Annapolis</option>
+	<option value="7">Ortigas</option>
+	<option value="7">Shaw Bldv.</option>
+	<option value="7">Boni Avenue</option>
+	<option value="11">Gualupe</option>
+	<option value="11">Buendia</option>
+	<option value="11">Ayala</option>
+	<option value="15">Magallanes</option>
+	<option value="15">Taft Avenue</option>
 	</select>
 
    <script>
+	function showValue(){
+		var fromwhere = document.getElementById("fromwhere").value;
 
-   function showValue(){
-   	var fromwhere = document.getElemebyById("fromwhere").value;
+		var towhere = document.getElementById("towhere").value;
 
-		var towhere = document.getElemebyById("towhere").value;
+	   	var basefare = 13;
 
-		var basefare = 13;
+         var minus = Math.abs(fromwhere - towhere);
 
-		var minus = Math.abs(fromwhere - towhere);
+			var payment = basefare + minus; 
 
-		var payment = basefare + minus;
+			
+		
+		window.alert("Your total will be " + payment + " PHP, please proceed to the next part below!");
+	}
 
-		window.alert("Your total will be " + payment +" PHP, please proceed to the next part")
-
-   }
 	function discount(){
-		var fromwhere = document.getElemebyById("fromwhere").value;
+		var fromwhere = document.getElementById("fromwhere").value;
 
-		var towhere = document.getElemebyById("towhere").value;
+		var towhere = document.getElementById("towhere").value;
 
 		var basefare = 13;
 
-		var minus = Math.abs(fromwhere-towhere);
+      var minus = Math.abs(fromwhere - towhere);
 
 		var payment = basefare + minus;
 
 		var rate = payment * 0.20;
 
 		var discountprice = payment - rate;
+		
+		window.alert("Your total will be " + discountprice + " PHP, please proceed to the next part below!");
+	}
 
-		window.alert("Your total will be " +discountprice+" PHP, please proceed to the next part below.")
     </script>
 
     <br><br>
 
-    <button type="Submit" class="btn btn-warning" onclick="showValue()">Show Price</button>
-    <button type="Submit" class="btn btn-warning" onclick="discount()">Discount Price</button>
+    <button type="Submit" class="btn btn-light" onclick="showValue()">Show Price</button>
+    <button type="Submit" class="btn btn-light" onclick="discount()">Discount Price</button>
 
     <br>
 
  </form>
-
 </div>
-
- <br><br><br>
+ 
+<br><br><br>
 
 <div class="whitbox">
  <br><br>
