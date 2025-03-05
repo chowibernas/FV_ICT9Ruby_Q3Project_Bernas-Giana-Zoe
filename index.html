@@ -14,19 +14,57 @@
 			font-weight: 500;
 			font-size: 16px;
 			text-align: center;
+			background-image: url(https://images.summitmedia-digital.com/spotph/images/2023/05/31/mrt-3-1685513284.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: black;
+			margin: 0;
 
 		}
+
+	header {
+		background-color: transparent;
+		height: 7em;
+		display: flex;
+		align-items: center;
+		position: sticky;
+		top: 0;
+		transition: background-color 0.4 ease-in-out;
+
+	}
+
+	header.scrolled {
+		background-color: #002D62;
+		opacity: 0.90;
+
+	}
+
+	header nav {
+		padding: 1.5em 0 1.5 5em;
+
+	}
+
+	header nav a {
+		text-decoration: none;
+		color: black;
+		font-size: 1.3em;
+		margin: 1em ;
+		transiton: color 0.4s ease-in-out;
+
+	}
+
+	header.scrolled nav a {
+		color: black;
+
+	}
+	.navbardesign {
+		hright: 1500px;
+		padding: 2em 6em 2em 6em;
+	}
 
 	img {
 			width:720px;
 			height: 720px;
-		}
-
-
-		body {
-		   background-image: url(https://images.summitmedia-digital.com/spotph/images/2023/05/31/mrt-3-1685513284.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
 		}
 
 		.rounded {
@@ -95,6 +133,12 @@
 			background-color: whitesmoke;
 		}
 
+		.footer {
+			background-color: #002D62;
+			font-size: 40;
+			color: #002D62;
+		}
+
 	
 </style>
 
@@ -111,6 +155,7 @@
 			<link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Caveat&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 	</div>
 
+<header>
 <div class="navbardesign">
 	<nav class="navbar navbar-expand-md fixed-top"; style="background-color: background-color: rgba(2, 14, 62, 0);">
 		<div class="container-fluid">
@@ -119,7 +164,7 @@
 				<div class="col" >
 					<ul class="navbar-nav me-auto">
 											<li class="nav-item">
-												<button class="btn btn-default"><a class="nav-link" href="trainproject.html" style="color: whitesmoke; 	font-size: 16px">Home</a></button>
+												<button class="btn btn-default"><a class="nav-link" href="trainproject.html" style="color: whitesmoke;	font-size: 16px">Home</a></button>
 											</li>
 											<li class="nav-item">
 												<button class="btn btn-default"><a class="nav-link" href="#transit" style="color: whitesmoke; font-size: 16px">Transit Map</a></button>
@@ -143,6 +188,7 @@
 							</div>
 						</nav>
 					</div>
+				</header>
 
 
 						<center>
@@ -168,20 +214,20 @@
   <br>
    <label>From which station?</label> 
 	<select class="form-select" id="fromwhere">
-	<option value="1"> Pick a Station</option>
-	<option value="1" >North Avenue</option>
-	<option value="1">Quezon Avenue</option>
-	<option value="1">GMA Kamuning</option>
-	<option value="1">Araneta - Cubao</option>
-	<option value="1">Santolan - Annapolis</option>
-	<option value="1">Ortigas</option>
-	<option value="1">Shaw Bldv.</option>
-	<option value="1">Boni Avenue</option>
-	<option value="1">Gualupe</option>
-	<option value="1">Buendia</option>
-	<option value="1">Ayala</option>
-	<option value="1">Magallanes</option>
-	<option value="1">Taft Avenue</option>
+	<option value="0"> Pick a Station</option>
+	<option value="0" >North Avenue</option>
+	<option value="0">Quezon Avenue</option>
+	<option value="0">GMA Kamuning</option>
+	<option value="0">Araneta - Cubao</option>
+	<option value="0">Santolan - Annapolis</option>
+	<option value="0">Ortigas</option>
+	<option value="0">Shaw Bldv.</option>
+	<option value="0">Boni Avenue</option>
+	<option value="0">Gualupe</option>
+	<option value="0">Buendia</option>
+	<option value="0">Ayala</option>
+	<option value="0">Magallanes</option>
+	<option value="0">Taft Avenue</option>
    </select>
 
    <br>
@@ -189,37 +235,59 @@
    <label>To which station</label> 
 	<select class="form-select" id="towhere">
    <option value="none"> Pick a Station</option>
-	<option value="13">North Avenue</option>
-	<option value="13">Quezon Avenue</option>
-	<option value="13">GMA Kamuning</option>
-	<option value="16">Araneta - Cubao</option>
-	<option value="16">Santolan - Annapolis</option>
-	<option value="20">Ortigas</option>
-	<option value="20">Shaw Bldv.</option>
-	<option value="20">Boni Avenue</option>
-	<option value="24">Gualupe</option>
-	<option value="24">Buendia</option>
-	<option value="24">Ayala</option>
-	<option value="28">Magallanes</option>
-	<option value="28">Taft Avenue</option>
+	<option value="0">North Avenue</option>
+	<option value="0">Quezon Avenue</option>
+	<option value="0">GMA Kamuning</option>
+	<option value="0">Araneta - Cubao</option>
+	<option value="0">Santolan - Annapolis</option>
+	<option value="0">Ortigas</option>
+	<option value="0">Shaw Bldv.</option>
+	<option value="0">Boni Avenue</option>
+	<option value="0">Gualupe</option>
+	<option value="0">Buendia</option>
+	<option value="0">Ayala</option>
+	<option value="0">Magallanes</option>
+	<option value="0">Taft Avenue</option>
 	</select>
 
    <script>
-	function showValue(){
-		var num1 = document.getElementById("fromwhere").value;
 
-		var num2 = document.getElementById("towhere").value;
+   function showValue(){
+   	var fromwhere = document.getElemebyById("fromwhere").value;
 
-			var payment = num1 * num2; 
-		
-		window.alert("Your total will be " + payment + " PHP, please proceed to the next part below!");
-	}
+		var towhere = document.getElemebyById("towhere").value;
 
+		var basefare = 13;
+
+		var minus = Math.abs(fromwhere - towhere);
+
+		var payment = basefare + minus;
+
+		window.alert("Your total will be " + payment +" PHP, please proceed to the next part")
+
+   }
+	function discount(){
+		var fromwhere = document.getElemebyById("fromwhere").value;
+
+		var towhere = document.getElemebyById("towhere").value;
+
+		var basefare = 13;
+
+		var minus = Math.abs(fromwhere-towhere);
+
+		var payment = basefare + minus;
+
+		var rate = payment * 0.20;
+
+		var discountprice = payment - rate;
+
+		window.alert("Your total will be " +discountprice+" PHP, please proceed to the next part below.")
     </script>
 
     <br><br>
 
-    <button type="Submit" class="btn btn-light" onclick="showValue()">Show Price</button>
+    <button type="Submit" class="btn btn-warning" onclick="showValue()">Show Price</button>
+    <button type="Submit" class="btn btn-warning" onclick="discount()">Discount Price</button>
 
     <br>
 
@@ -227,10 +295,10 @@
 
 </div>
 
- <br>
-
+ <br><br><br>
 
 <div class="whitbox">
+ <br><br>
 <p>╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫
 ╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫╫
 ╫╫╫╫╫╫╫╫╫</p>
@@ -245,12 +313,29 @@
  <br>
  <img src="https://dam.mediacorp.sg/image/upload/s--eJjY2upu--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/newmrtmap2.jpg?itok=24bQSMBm">
 
- <br><br>
+ <br><br><br>
 
 </div>
 </div>
 </center>
+
+<div class="footer">
+	<p>aaaaaaaa</p>
+</div>
+
 </body>
+
+<script>
+	document.addEventListener('scroll', () => {
+		const header = document.querySelector ('header')
+
+		if (window.scrollY > 0) {
+			header.classList.add('scrolled');
+		} else {
+			header.classList.remove('scrolled');
+		}
+	});
+</script>
 
 </body>
 </html>
